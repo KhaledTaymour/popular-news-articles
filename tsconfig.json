@@ -23,6 +23,7 @@
     /* Absolute Paths */
     "baseUrl": ".",
     "paths": {
+      "@/*": ["./src/*"],
       "src/*": ["./src/*"]
     }
   },

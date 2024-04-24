@@ -1,21 +1,22 @@
 import React, { useState } from "react";
-import "./NewsList.scss";
-import { getMostPopularNewsFromNYTimes } from "src/services/news";
-import useSWR from "swr";
 import NewsCard from "../NewsCard/NewsCard";
+import { useGetMostPopularNewsFromNYTimes } from "@/hooks/newsFetch";
+import LoadingCard from "src/components/LoadingCard/LoadingCard";
 
-function NewsList() {
+function NewsList({ period }: { period: number }) {
   const {
     data: newsListData,
     error,
     isLoading: isNewsListLoading,
-  } = useSWR("/api/user", getMostPopularNewsFromNYTimes);
+  } = useGetMostPopularNewsFromNYTimes({ period });
 
   return (
-    <ul className="news-list__wrapper">
-      {newsListData?.results?.map((newsItem) => (
-        <NewsCard key={newsItem.id} newsItem={newsItem} />
-      ))}
+    <ul className="news-list__wrapper grid gap-4" data-testid="news-list">
+      {isNewsListLoading
+        ? new Array(3).map((_, i) => <LoadingCard key={i} />)
+        : newsListData?.results?.map((newsItem) => (
+            <NewsCard key={newsItem.id} newsItem={newsItem} />
+          ))}
     </ul>
   );
 }
