@@ -30,4 +30,5 @@ export default defineConfig({
   build: {
     outDir: "build",
   },
+  base: "/popular-news-articles/",
 });
