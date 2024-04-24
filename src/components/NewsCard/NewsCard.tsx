@@ -17,7 +17,7 @@ function NewsCard({ newsItem }: { newsItem: NewsItem }) {
   }
 
   return (
-    <section className="news-card__wrapper">
+    <section className="news-card__wrapper" data-testid="news-card">
       <section className="news-card__image">
         <img src={imageURL} />
       </section>
@@ -26,11 +26,18 @@ function NewsCard({ newsItem }: { newsItem: NewsItem }) {
       <label className="news-card__date">{newsItem.published_date}</label>
 
       {showNewsDetails && (
-        <article className="news-card__info-details">
+        <article
+          className="news-card__info-details"
+          data-testid="news-card-info-details"
+        >
           <article className="news-card__info-details-text">
             {newsItem.abstract}
           </article>
-          <a href={newsItem.url} target="_blank">
+          <a
+            href={newsItem.url}
+            target="_blank"
+            data-testid="news-card-read-more"
+          >
             Read More
           </a>
         </article>
@@ -38,6 +45,7 @@ function NewsCard({ newsItem }: { newsItem: NewsItem }) {
       <section
         className="news-card__footer"
         onClick={() => setShowNewsDetails((prev) => !prev)}
+        data-testid="news-card-collapsible"
       >
         {showNewsDetails ? "▲" : "▼"}
       </section>
