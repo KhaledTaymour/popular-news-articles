@@ -23,7 +23,8 @@ An application fetching the popular news from NY Times in the last dat, week and
 1.  You can clone it : `git clone git@github.com:KhaledTaymour/fx-currencies.git`\
     or `git clone git@github.com:KhaledTaymour/popular-news-articles.git`.
 2.  run `npm ci` or `npm install`.
-3.  run `npm run dev` and open "http://localhost:3006/" or `npm run build`.
+3.  create a file in the root directory called `.env` and add the NY Times key as `VITE_NYTIME_KEY=ABC` replace ABD with your own key.
+4.  run `npm run dev` and open "http://localhost:3006/" or `npm run build`.
 
 ## Available Scripts
 

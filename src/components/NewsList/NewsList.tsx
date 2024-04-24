@@ -1,14 +1,10 @@
-import React, { useState } from "react";
 import NewsCard from "src/components/NewsCard/NewsCard";
 import { useGetMostPopularNewsFromNYTimes } from "@/hooks/newsFetch";
 import LoadingCard from "src/components/LoadingCard/LoadingCard";
 
 function NewsList({ period }: { period: number }) {
-  const {
-    data: newsListData,
-    error,
-    isLoading: isNewsListLoading,
-  } = useGetMostPopularNewsFromNYTimes({ period });
+  const { data: newsListData, isLoading: isNewsListLoading } =
+    useGetMostPopularNewsFromNYTimes({ period });
 
   return (
     <ul className="news-list__wrapper grid gap-4" data-testid="news-list">

@@ -10,7 +10,7 @@ async function mockAPI({
 }: {
   page: Page;
   api: string;
-  mock: {};
+  mock: unknown;
 }) {
   await page.route(api, async (route) => {
     const json = mock;

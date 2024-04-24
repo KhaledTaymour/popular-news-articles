@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./NewsCard.scss";
 import { NewsItem } from "src/types/news.type";
 import NoImage from "src/assets/images/no-image.svg";

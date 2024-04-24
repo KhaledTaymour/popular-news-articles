@@ -1,4 +1,3 @@
-import React from "react";
 import NewsList from "src/components/NewsList/NewsList";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
