@@ -28,6 +28,8 @@
     }
   },
 
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["src", "setupTests.ts"],
+  "references": [{ "path": "./tsconfig.node.json" }],
+
+  "types": ["vitest/globals"]
 }

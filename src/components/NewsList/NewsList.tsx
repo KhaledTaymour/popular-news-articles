@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import NewsCard from "../NewsCard/NewsCard";
+import NewsCard from "src/components/NewsCard/NewsCard";
 import { useGetMostPopularNewsFromNYTimes } from "@/hooks/newsFetch";
 import LoadingCard from "src/components/LoadingCard/LoadingCard";
 
