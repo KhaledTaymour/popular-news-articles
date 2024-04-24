@@ -59,3 +59,7 @@ run e2e tests (.spec) headed
 ### `npm run lint`
 
 run linting using eslint
+
+## Deployed Page
+
+https://khaledtaymour.github.io/popular-news-articles/
